@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Assistant</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        prefix: "tw-",
-        corePlugins: {
-           preflight: false,
-        }
-      }
-    </script>
-    <style>
-      body {
-          font-family: 'Poppins', sans-serif;
-      }
-    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">College Assistant</a>
-      
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/grading-assistant.html">Grading Assistant</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/syllabus-summary.html">Syllabus Summary</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/calendar-sync.html">Calendar Sync</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/grade-calculator.html">Grade Calculator</a>
-              </li>
-            </ul>
-          </div>
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand name section -->
+                <a href="/" class="text-lg font-bold text-gray-800">College Assistant</a>
+
+                <!-- Navigation Links -->
+                <div class="flex">
+                    <a href="/"
+                        class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="/grading-assistant.html"
+                        class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grading
+                        Assistant</a>
+                    <a href="/syllabus-summary.html"
+                        class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Syllabus
+                        Summary</a>
+                    <a href="/calendar-sync.html"
+                        class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Calendar
+                        Sync</a>
+                    <a href="/grade-calculator.html"
+                        class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grade
+                        Calculator</a>
+                </div>
+            </div>
         </div>
-      </nav>
+    </nav>
 
 
-      <div class="tw-flex tw-justify-center tw-items-center tw-min-h-screen">
-        <div class="tw-bg-white tw-p-20 tw-rounded-lg tw-shadow-lg">
-            <h2 class="tw-text-2xl tw-text-center tw-font-bold tw-mb-4">Select the assignment you need help with:</h2>
-            <div class="tw-grid tw-gap-4 tw-grid-cols-1">
-                <a href="/grading-assistant/assistant.html"><button class="btn btn-primary tw-w-full">Assignment 1</button></a>
-                <button class="btn btn-primary tw-w-full">Assignment 2</button>
-                <button class="btn btn-primary tw-w-full">Assignment 3</button>
-                <button class="btn btn-primary tw-w-full">Assignment 4</button>
+    <div class="flex justify-center items-center min-h-screen">
+        <div class="bg-white p-20 rounded-lg shadow-lg">
+            <h2 class="text-2xl text-center mb-4">Select the course you need help with</h2>
+            <div class="grid gap-4 grid-cols-1">
+                <a href="/grading-assistant/assistant.html">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Assignment 1</button>
+                </a>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Assignment 2</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Assignment 3</button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded w-full">Assignment 4</button>
             </div>
         </div>
     </div>
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
+
 </html>
