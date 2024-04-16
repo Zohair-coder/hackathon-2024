@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Assistant</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <base href="/">
+  <script>
+    // Check if the hostname includes 'github.io' which is used in GitHub Pages
+    if (window.location.hostname.includes('github.io')) {
+      document.querySelector('base').href = '/hackathon-2024/';
+    }
+  </script>
 </head>
 
 <body>
@@ -13,18 +20,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Brand name section -->
-        <a href="/" class="text-lg font-bold text-gray-800">College Assistant</a>
+        <a href="index.html" class="text-lg font-bold text-gray-800">College Assistant</a>
 
         <!-- Navigation Links -->
         <div class="flex">
-          <a href="/" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-          <a href="/grading-assistant.html"
+          <a href="index.html" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="grading-assistant.html"
             class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grading Assistant</a>
-          <a href="/syllabus-summary.html"
+          <a href="syllabus-summary.html"
             class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Syllabus Summary</a>
-          <a href="/calendar-sync.html"
+          <a href="calendar-sync.html"
             class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Calendar Sync</a>
-          <a href="/grade-calculator.html"
+          <a href="grade-calculator.html"
             class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grade Calculator</a>
         </div>
 
