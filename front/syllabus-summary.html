@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <mc:\Users\LIZ\Desktop\logo\Screenshot 2024-04-20 125731.pngeta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>College Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <base href="/">
+    <script>
+      // Check if the hostname includes 'github.io' which is used in GitHub Pages
+      if (window.location.hostname.includes('github.io')) {
+        document.querySelector('base').href = '/hackathon-2024/';
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet">
+
+    <style>
+      body {
+        background-color: 0xf0f0f0;
+        font-family: Monospace;
+      }
+
+      .josefin-sans {
+        font-family: "Josefin Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
+      img.header-logo {
+        height: 60px;
+        vertical-align: left;
+      }
+
+      /* Tooltip container */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* Tooltip text */
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0s;
+      }
+
+      /* Tooltip arrow */
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }
+
+      /* Show the tooltip text when you mouse over the tooltip container */
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      body {
+        overflow-y: scroll;
+        /* Show vertical scrollbar */
+      }
+    </style>
+</head>
+
+<body>
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Brand name section -->
+        <a href="index.html" class="text-lg font-bold text-gray-800 flex justify-between items-center">
+          <img src="images/logo.png" alt="Logo" class="header-logo">
+          <div class="mt-1 ml-1">
+            <h1 class="josefin-sans">Learnify</h1>
+
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="flex">
+          <a href="index.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="grading-assistant.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">ReviewPro</a>
+          <a href="syllabus-summary.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Course Capsule</a>
+          <a href="calendar-sync.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Calendar Sync</a>
+          <a href="grade-calculator.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grade Forecaster</a>
+        </div>
+
+        <!-- User Info -->
+        <div class="flex items-center">
+          <svg class="h-6 w-6 text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
+          </svg>
+          <span class="text-gray-800 text-sm font-medium">Zohair ul Hasan</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-2xl font-bold text-gray-900 mb-6">Select a course</h1>
+    <section class="mt-4">
+      <!-- CS T480 -->
+      <div onclick="toggleCollapse('CST480-details', event)"
+        class="flex justify-between items-center px-4 py-3 bg-white shadow cursor-pointer hover:bg-gray-100 transition duration-200">
+        <h2 class="text-xl font-semibold text-gray-800">CS T480</h2>
+        <svg class="w-6 h-6 text-gray-800 transform rotate-90 transition duration-200"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L224 277.091l154.706-154.707c9.373-9.373 24.569-9.373 33.941 0l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.373-24.569 9.373-33.942 0z" />
+        </svg>
+      </div>
+      <div id="CST480-details" style="display: none;" class="bg-white p-5">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+          <table aria-label="grading rubric" class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3 px-6">Component</th>
+                <th scope="col" class="py-3 px-6">Weightage</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 1</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 2</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 3</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="py-4 px-6">Assignment 4</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+
+          <div class="flex items-center justify-center mb-12">
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 mr-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160C3.125 272.4 0 264.2 0 256s3.125-16.38 9.375-22.62l160-160C179.6 67.13 187.8 64 192 64c8.188 0 16.38 3.125 22.62 9.375s9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62L75.31 256l139.7 139.7c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </button>
+            <h4 class="text-base font-medium text-gray-800">April 2024</h4>
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 ml-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-6.25-6.25-9.375-14.44-9.375-22.62s3.125-16.38 9.375-22.62L180.7 256 41.38 116.3C35.13 110 32 101.8 32 93.62s3.125-16.38 9.375-22.62C47.63 64.13 55.82 64 64 64s16.38 3.125 22.62 9.375l160 160c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62l-160 160C80.38 444.9 72.19 448 64 448z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1 text-s">
+            <!-- Weekdays Labels -->
+            <div class="text-center font-bold">Sun</div>
+            <div class="text-center font-bold">Mon</div>
+            <div class="text-center font-bold">Tue</div>
+            <div class="text-center font-bold">Wed</div>
+            <div class="text-center font-bold">Thu</div>
+            <div class="text-center font-bold">Fri</div>
+            <div class="text-center font-bold">Sat</div>
+            <!-- Days in Month -->
+            <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+            <div></div> <!-- Empty if month starts on Monday -->
+            <div class="py-1 px-2 text-center border">1</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+              <span class="tooltiptext">Reading</span>
+              2
+            </div>
+            <div class="py-1 px-2 text-center border">3</div>
+            <div class="py-1 px-2 text-center border">4</div>
+            <div class="py-1 px-2 text-center border">5</div>
+            <div class="py-1 px-2 text-center border">6</div>
+            <div class="py-1 px-2 text-center border">7</div>
+            <div class="py-1 px-2 text-center border">8</div>
+            <div class="py-1 px-2 text-center border">9</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              10
+            </div>
+            <div class="py-1 px-2 text-center border">11</div>
+            <div class="py-1 px-2 text-center border">12</div>
+            <div class="py-1 px-2 text-center border">13</div>
+            <div class="py-1 px-2 text-center border">14</div>
+            <div class="py-1 px-2 text-center border">15</div>
+            <div class="py-1 px-2 text-center border">16</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              17
+            </div>
+            <div class="py-1 px-2 text-center border">18</div>
+            <div class="py-1 px-2 text-center border">19</div>
+            <div class="py-1 px-2 text-center border">20</div>
+            <div class="py-1 px-2 text-center border">21</div>
+            <div class="py-1 px-2 text-center border">22</div>
+            <div class="py-1 px-2 text-center border">23</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              24
+            </div>
+            <div class="py-1 px-2 text-center border">25</div>
+            <div class="py-1 px-2 text-center border">26</div>
+            <div class="py-1 px-2 text-center border">27</div>
+            <div class="py-1 px-2 text-center border">28</div>
+            <div class="py-1 px-2 text-center border">29</div>
+            <div class="py-1 px-2 text-center border">30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS 270 -->
+      <div onclick="toggleCollapse('CS270-details', event)"
+        class="flex justify-between items-center px-4 py-3 bg-white shadow cursor-pointer hover:bg-gray-100 transition duration-200">
+        <h2 class="text-xl font-semibold text-gray-800">CS 270</h2>
+        <svg class="w-6 h-6 text-gray-800 transform rotate-90 transition duration-200"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L224 277.091l154.706-154.707c9.373-9.373 24.569-9.373 33.941 0l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.373-24.569 9.373-33.942 0z" />
+        </svg>
+      </div>
+      <div id="CS270-details" style="display: none;" class="bg-white p-5">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+          <table aria-label="grading rubric" class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3 px-6">Component</th>
+                <th scope="col" class="py-3 px-6">Weightage</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 1</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 2</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 3</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="py-4 px-6">Assignment 4</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+
+          <div class="flex items-center justify-center mb-12">
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 mr-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160C3.125 272.4 0 264.2 0 256s3.125-16.38 9.375-22.62l160-160C179.6 67.13 187.8 64 192 64c8.188 0 16.38 3.125 22.62 9.375s9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62L75.31 256l139.7 139.7c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </button>
+            <h4 class="text-base font-medium text-gray-800">April 2024</h4>
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 ml-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-6.25-6.25-9.375-14.44-9.375-22.62s3.125-16.38 9.375-22.62L180.7 256 41.38 116.3C35.13 110 32 101.8 32 93.62s3.125-16.38 9.375-22.62C47.63 64.13 55.82 64 64 64s16.38 3.125 22.62 9.375l160 160c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62l-160 160C80.38 444.9 72.19 448 64 448z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1 text-s">
+            <!-- Weekdays Labels -->
+            <div class="text-center font-bold">Sun</div>
+            <div class="text-center font-bold">Mon</div>
+            <div class="text-center font-bold">Tue</div>
+            <div class="text-center font-bold">Wed</div>
+            <div class="text-center font-bold">Thu</div>
+            <div class="text-center font-bold">Fri</div>
+            <div class="text-center font-bold">Sat</div>
+            <!-- Days in Month -->
+            <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+            <div></div> <!-- Empty if month starts on Monday -->
+            <div class="py-1 px-2 text-center border">1</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+              <span class="tooltiptext">Reading</span>
+              2
+            </div>
+            <div class="py-1 px-2 text-center border">3</div>
+            <div class="py-1 px-2 text-center border">4</div>
+            <div class="py-1 px-2 text-center border">5</div>
+            <div class="py-1 px-2 text-center border">6</div>
+            <div class="py-1 px-2 text-center border">7</div>
+            <div class="py-1 px-2 text-center border">8</div>
+            <div class="py-1 px-2 text-center border">9</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              10
+            </div>
+            <div class="py-1 px-2 text-center border">11</div>
+            <div class="py-1 px-2 text-center border">12</div>
+            <div class="py-1 px-2 text-center border">13</div>
+            <div class="py-1 px-2 text-center border">14</div>
+            <div class="py-1 px-2 text-center border">15</div>
+            <div class="py-1 px-2 text-center border">16</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              17
+            </div>
+            <div class="py-1 px-2 text-center border">18</div>
+            <div class="py-1 px-2 text-center border">19</div>
+            <div class="py-1 px-2 text-center border">20</div>
+            <div class="py-1 px-2 text-center border">21</div>
+            <div class="py-1 px-2 text-center border">22</div>
+            <div class="py-1 px-2 text-center border">23</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              24
+            </div>
+            <div class="py-1 px-2 text-center border">25</div>
+            <div class="py-1 px-2 text-center border">26</div>
+            <div class="py-1 px-2 text-center border">27</div>
+            <div class="py-1 px-2 text-center border">28</div>
+            <div class="py-1 px-2 text-center border">29</div>
+            <div class="py-1 px-2 text-center border">30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGL 101 -->
+      <div onclick="toggleCollapse('ENGL101-details', event)"
+        class="flex justify-between items-center px-4 py-3 bg-white shadow cursor-pointer hover:bg-gray-100 transition duration-200">
+        <h2 class="text-xl font-semibold text-gray-800">ENGL 101</h2>
+        <svg class="w-6 h-6 text-gray-800 transform rotate-90 transition duration-200"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L224 277.091l154.706-154.707c9.373-9.373 24.569-9.373 33.941 0l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.373-24.569 9.373-33.942 0z" />
+        </svg>
+      </div>
+      <div id="ENGL101-details" style="display: none;" class="bg-white p-5">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+          <table aria-label="grading rubric" class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3 px-6">Component</th>
+                <th scope="col" class="py-3 px-6">Weightage</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 1</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 2</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 3</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="py-4 px-6">Assignment 4</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+
+          <div class="flex items-center justify-center mb-12">
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 mr-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160C3.125 272.4 0 264.2 0 256s3.125-16.38 9.375-22.62l160-160C179.6 67.13 187.8 64 192 64c8.188 0 16.38 3.125 22.62 9.375s9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62L75.31 256l139.7 139.7c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </button>
+            <h4 class="text-base font-medium text-gray-800">April 2024</h4>
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 ml-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-6.25-6.25-9.375-14.44-9.375-22.62s3.125-16.38 9.375-22.62L180.7 256 41.38 116.3C35.13 110 32 101.8 32 93.62s3.125-16.38 9.375-22.62C47.63 64.13 55.82 64 64 64s16.38 3.125 22.62 9.375l160 160c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62l-160 160C80.38 444.9 72.19 448 64 448z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1 text-s">
+            <!-- Weekdays Labels -->
+            <div class="text-center font-bold">Sun</div>
+            <div class="text-center font-bold">Mon</div>
+            <div class="text-center font-bold">Tue</div>
+            <div class="text-center font-bold">Wed</div>
+            <div class="text-center font-bold">Thu</div>
+            <div class="text-center font-bold">Fri</div>
+            <div class="text-center font-bold">Sat</div>
+            <!-- Days in Month -->
+            <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+            <div></div> <!-- Empty if month starts on Monday -->
+            <div class="py-1 px-2 text-center border">1</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+              <span class="tooltiptext">Reading</span>
+              2
+            </div>
+            <div class="py-1 px-2 text-center border">3</div>
+            <div class="py-1 px-2 text-center border">4</div>
+            <div class="py-1 px-2 text-center border">5</div>
+            <div class="py-1 px-2 text-center border">6</div>
+            <div class="py-1 px-2 text-center border">7</div>
+            <div class="py-1 px-2 text-center border">8</div>
+            <div class="py-1 px-2 text-center border">9</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              10
+            </div>
+            <div class="py-1 px-2 text-center border">11</div>
+            <div class="py-1 px-2 text-center border">12</div>
+            <div class="py-1 px-2 text-center border">13</div>
+            <div class="py-1 px-2 text-center border">14</div>
+            <div class="py-1 px-2 text-center border">15</div>
+            <div class="py-1 px-2 text-center border">16</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              17
+            </div>
+            <div class="py-1 px-2 text-center border">18</div>
+            <div class="py-1 px-2 text-center border">19</div>
+            <div class="py-1 px-2 text-center border">20</div>
+            <div class="py-1 px-2 text-center border">21</div>
+            <div class="py-1 px-2 text-center border">22</div>
+            <div class="py-1 px-2 text-center border">23</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              24
+            </div>
+            <div class="py-1 px-2 text-center border">25</div>
+            <div class="py-1 px-2 text-center border">26</div>
+            <div class="py-1 px-2 text-center border">27</div>
+            <div class="py-1 px-2 text-center border">28</div>
+            <div class="py-1 px-2 text-center border">29</div>
+            <div class="py-1 px-2 text-center border">30</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHYS 102 -->
+      <div onclick="toggleCollapse('PHYS102-details', event)"
+        class="flex justify-between items-center px-4 py-3 bg-white shadow cursor-pointer hover:bg-gray-100 transition duration-200">
+        <h2 class="text-xl font-semibold text-gray-800">PHYS 102</h2>
+        <svg class="w-6 h-6 text-gray-800 transform rotate-90 transition duration-200"
+          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L224 277.091l154.706-154.707c9.373-9.373 24.569-9.373 33.941 0l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.373-24.569 9.373-33.942 0z" />
+        </svg>
+      </div>
+      <div id="PHYS102-details" style="display: none;" class="bg-white p-5">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+          <table aria-label="grading rubric" class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+              <tr>
+                <th scope="col" class="py-3 px-6">Component</th>
+                <th scope="col" class="py-3 px-6">Weightage</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white">
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 1</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 2</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white border-b">
+                <td class="py-4 px-6">Assignment 3</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="py-4 px-6">Assignment 4</td>
+                <td class="py-4 px-6">25%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+
+          <div class="flex items-center justify-center mb-12">
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 mr-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160C3.125 272.4 0 264.2 0 256s3.125-16.38 9.375-22.62l160-160C179.6 67.13 187.8 64 192 64c8.188 0 16.38 3.125 22.62 9.375s9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62L75.31 256l139.7 139.7c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62C208.4 444.9 200.2 448 192 448z" />
+              </svg>
+            </button>
+            <h4 class="text-base font-medium text-gray-800">April 2024</h4>
+            <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 ml-24">
+              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <path
+                  d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-6.25-6.25-9.375-14.44-9.375-22.62s3.125-16.38 9.375-22.62L180.7 256 41.38 116.3C35.13 110 32 101.8 32 93.62s3.125-16.38 9.375-22.62C47.63 64.13 55.82 64 64 64s16.38 3.125 22.62 9.375l160 160c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62l-160 160C80.38 444.9 72.19 448 64 448z" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-7 gap-1 text-s">
+            <!-- Weekdays Labels -->
+            <div class="text-center font-bold">Sun</div>
+            <div class="text-center font-bold">Mon</div>
+            <div class="text-center font-bold">Tue</div>
+            <div class="text-center font-bold">Wed</div>
+            <div class="text-center font-bold">Thu</div>
+            <div class="text-center font-bold">Fri</div>
+            <div class="text-center font-bold">Sat</div>
+            <!-- Days in Month -->
+            <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+            <div></div> <!-- Empty if month starts on Monday -->
+            <div class="py-1 px-2 text-center border">1</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+              <span class="tooltiptext">Reading</span>
+              2
+            </div>
+            <div class="py-1 px-2 text-center border">3</div>
+            <div class="py-1 px-2 text-center border">4</div>
+            <div class="py-1 px-2 text-center border">5</div>
+            <div class="py-1 px-2 text-center border">6</div>
+            <div class="py-1 px-2 text-center border">7</div>
+            <div class="py-1 px-2 text-center border">8</div>
+            <div class="py-1 px-2 text-center border">9</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              10
+            </div>
+            <div class="py-1 px-2 text-center border">11</div>
+            <div class="py-1 px-2 text-center border">12</div>
+            <div class="py-1 px-2 text-center border">13</div>
+            <div class="py-1 px-2 text-center border">14</div>
+            <div class="py-1 px-2 text-center border">15</div>
+            <div class="py-1 px-2 text-center border">16</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              17
+            </div>
+            <div class="py-1 px-2 text-center border">18</div>
+            <div class="py-1 px-2 text-center border">19</div>
+            <div class="py-1 px-2 text-center border">20</div>
+            <div class="py-1 px-2 text-center border">21</div>
+            <div class="py-1 px-2 text-center border">22</div>
+            <div class="py-1 px-2 text-center border">23</div>
+            <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+              <span class="tooltiptext">Homework</span>
+              24
+            </div>
+            <div class="py-1 px-2 text-center border">25</div>
+            <div class="py-1 px-2 text-center border">26</div>
+            <div class="py-1 px-2 text-center border">27</div>
+            <div class="py-1 px-2 text-center border">28</div>
+            <div class="py-1 px-2 text-center border">29</div>
+            <div class="py-1 px-2 text-center border">30</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+</body>
+
+<script>
+  function toggleCollapse(id, event) {
+    const content = document.getElementById(id);
+    const arrow = event.currentTarget.querySelector('svg');
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+      arrow.classList.remove('rotate-90');
+      arrow.classList.add('rotate-270');
+    } else {
+      content.style.display = 'none';
+      arrow.classList.remove('rotate-270');
+      arrow.classList.add('rotate-90');
+    }
+  }
+</script>
+
+
+
+</html>
