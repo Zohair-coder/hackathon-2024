@@ -13,6 +13,49 @@
       document.querySelector('base').href = '/hackathon-2024/';
     }
   </script>
+  <style>
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 0;
+      transition: opacity 0s;
+    }
+
+    /* Tooltip arrow */
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -24,7 +67,8 @@
 
         <!-- Navigation Links -->
         <div class="flex">
-          <a href="index.html" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="index.html"
+            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
           <a href="grading-assistant.html"
             class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grading Assistant</a>
           <a href="syllabus-summary.html"
@@ -47,6 +91,72 @@
       </div>
     </div>
   </nav>
+
+  <section class="mt-8 px-4 py-5 bg-white shadow-lg rounded-lg">
+    <h2 class="text-xl font-bold text-gray-800 mb-4">CS T480</h2>
+    <div>
+      <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="py-3 px-6">Component</th>
+            <th scope="col" class="py-3 px-6">Weightage</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white">
+          <tr class="bg-white border-b">
+            <td class="py-4 px-6">Assignment 1</td>
+            <td class="py-4 px-6">25%</td>
+          </tr>
+          <tr class="bg-white border-b">
+            <td class="py-4 px-6">Assignment 2</td>
+            <td class="py-4 px-6">25%</td>
+          </tr>
+          <tr class="bg-white border-b">
+            <td class="py-4 px-6">Assignment 3</td>
+            <td class="py-4 px-6">25%</td>
+          </tr>
+          <tr class="bg-white">
+            <td class="py-4 px-6">Assignment 4</td>
+            <td class="py-4 px-6">25%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+      <div class="grid grid-cols-7 gap-1 text-xs">
+        <!-- Weekdays Labels -->
+        <div class="text-center font-bold">Sun</div>
+        <div class="text-center font-bold">Mon</div>
+        <div class="text-center font-bold">Tue</div>
+        <div class="text-center font-bold">Wed</div>
+        <div class="text-center font-bold">Thu</div>
+        <div class="text-center font-bold">Fri</div>
+        <div class="text-center font-bold">Sat</div>
+        <!-- Days in Month -->
+        <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+        <div></div> <!-- Empty if month starts on Monday -->
+        <div class="py-1 px-2 text-center border">1</div>
+        <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+          <span class="tooltiptext">Reading</span>
+          2
+        </div>
+        <div class="py-1 px-2 text-center border">3</div>
+        <div class="py-1 px-2 text-center border">4</div>
+        <div class="py-1 px-2 text-center border">5</div>
+        <div class="py-1 px-2 text-center border">6</div>
+        <div class="py-1 px-2 text-center border">7</div>
+        <div class="py-1 px-2 text-center border">8</div>
+        <div class="py-1 px-2 text-center border">9</div>
+        <div class="py-1 px-2 text-center border bg-red-500 text-white" title="Homework">10</div>
+        <!-- Continue filling in all days of the month -->
+        <!-- Add more days with 'bg-red-500 text-white' where assignments are due -->
+      </div>
+    </div>
+  </section>
+
+
 </body>
 
 </html>
