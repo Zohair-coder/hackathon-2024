@@ -58,7 +58,7 @@
   <!-- Prompt Messages Container - Modify the height according to your need -->
   <div class="flex h-[90vh] w-full flex-col">
     <!-- Prompt Messages -->
-    <div
+    <div id="prompt-messages-container"
       class="flex-1 space-y-6 overflow-y-auto rounded-xl bg-slate-200 p-4 text-sm leading-6 text-slate-900 shadow-sm light:bg-slate-900 light:text-slate-300 sm:text-base sm:leading-7">
       <div class="flex items-start">
         <img class="mr-2 h-8 w-8 rounded-full" src="https://dummyimage.com/128x128/363536/ffffff&text=AI" alt="AI" />
@@ -67,17 +67,13 @@
             the syllabus, and the lecture slides.</p>
         </div>
       </div>
-      <div class="flex flex-row-reverse items-start">
-        <img class="ml-2 h-8 w-8 rounded-full" src="https://dummyimage.com/128x128/354ea1/ffffff&text=ZH" alt="ZH" />
-
-        <div
+      <!-- <div
           class="flex min-h-[85px] rounded-b-xl rounded-tl-xl bg-slate-50 p-4 light:bg-slate-800 sm:min-h-0 sm:max-w-md md:max-w-2xl">
           <p>
             I'm not sure what endpoints I need to create. Can you point me in the right direction?
           </p>
-        </div>
-      </div>
-      <div class="flex items-start">
+        </div> -->
+      <div id="ai-response-container" class="flex items-start hidden">
         <img class="mr-2 h-8 w-8 rounded-full" src="https://dummyimage.com/128x128/363536/ffffff&text=AI" alt="AI" />
         <div class="flex rounded-b-xl rounded-tr-xl bg-slate-50 p-4 light:bg-slate-800 sm:max-w-md md:max-w-2xl">
           <p>
@@ -207,7 +203,7 @@
     promptMessageContainer.appendChild(userPromptMessage);
 
     // Append the prompt message container to the prompt messages container
-    const promptMessagesContainer = document.querySelector(".overflow-y-auto");
+    const promptMessagesContainer = document.getElementById("prompt-messages-container");
     promptMessagesContainer.appendChild(promptMessageContainer);
 
     // Scroll to the bottom of the prompt messages container
@@ -217,12 +213,20 @@
     chatInput.value = "";
   }
 
+  function addAIResponse() {
+    const aiResponseContainer = document.getElementById("ai-response-container").cloneNode(true);
+    aiResponseContainer.classList.remove("hidden");
+    const promptMessagesContainer = document.getElementById("prompt-messages-container");
+    promptMessagesContainer.appendChild(aiResponseContainer);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const chatInputForm = document.getElementById("chat-input-form");
     chatInputForm.addEventListener("submit", function (event) {
       event.preventDefault();
       const submittedText = chatInputForm.elements["chat-input"].value;
       updatePromptMessages(submittedText);
+      setTimeout(addAIResponse, 3000);
     });
   });
 </script>
