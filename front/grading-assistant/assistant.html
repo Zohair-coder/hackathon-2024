@@ -13,6 +13,15 @@
       document.querySelector('base').href = '/hackathon-2024/';
     }
   </script>
+  <style>
+    .animate-bounce200 {
+      animation-delay: 0.2s;
+    }
+
+    .animate-bounce400 {
+      animation-delay: 0.4s;
+    }
+  </style>
 </head>
 
 <body>
@@ -142,6 +151,14 @@
           </p>
         </div>
       </div>
+
+      <div id="typing-indicator" class="flex items-center space-x-2 hidden">
+        <img class="mr-2 h-8 w-8 rounded-full" src="https://dummyimage.com/128x128/363536/ffffff&text=AI" alt="AI" />
+        <div class="h-2 w-2 bg-gray-600 rounded-full animate-bounce"></div>
+        <div class="h-2 w-2 bg-gray-600 rounded-full animate-bounce200"></div>
+        <div class="h-2 w-2 bg-gray-600 rounded-full animate-bounce400"></div>
+      </div>
+
     </div>
     <!-- Prompt message input -->
     <form id="chat-input-form" class="mt-2">
@@ -220,13 +237,27 @@
     promptMessagesContainer.appendChild(aiResponseContainer);
   }
 
+  function showTypingIndicatorAndAddAiResponse() {
+    const typingIndicator = document.getElementById("typing-indicator").cloneNode(true);
+    typingIndicator.classList.remove("hidden");
+    // typingIndicator.classList.add("animate-pulse");
+
+    const promptMessagesContainer = document.getElementById("prompt-messages-container");
+    promptMessagesContainer.appendChild(typingIndicator);
+    
+    setTimeout(() => { // Simulate a delay for typing
+      typingIndicator.classList.add("hidden");
+      addAIResponse(); // Call this after delay to simulate response time
+    }, 5000); // Adjust delay as needed for realistic typing effect
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     const chatInputForm = document.getElementById("chat-input-form");
     chatInputForm.addEventListener("submit", function (event) {
       event.preventDefault();
       const submittedText = chatInputForm.elements["chat-input"].value;
       updatePromptMessages(submittedText);
-      setTimeout(addAIResponse, 3000);
+      showTypingIndicatorAndAddAiResponse();
     });
   });
 </script>
