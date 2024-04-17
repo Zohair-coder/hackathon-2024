@@ -148,7 +148,7 @@
       </div>
     </div>
     <!-- Prompt message input -->
-    <form class="mt-2">
+    <form id="chat-input-form" class="mt-2">
       <label for="chat-input" class="sr-only">Enter your prompt</label>
       <div class="relative">
         <button type="button"
@@ -174,5 +174,57 @@
     </form>
   </div>
 </body>
+
+<script>
+
+  // Function to update the prompt messages with the user's input
+  function updatePromptMessages(input) {
+    const chatInput = document.getElementById("chat-input");
+    const chatInputForm = document.getElementById("chat-input-form");
+
+    // Check if the input is empty
+    if (input.trim() === "") {
+      return;
+    }
+
+    // Create a new prompt message container
+    const promptMessageContainer = document.createElement("div");
+    promptMessageContainer.classList.add("flex", "flex-row-reverse", "items-start");
+
+    // Create the user's avatar
+    const userAvatar = document.createElement("img");
+    userAvatar.classList.add("ml-2", "h-8", "w-8", "rounded-full");
+    userAvatar.src = "https://dummyimage.com/128x128/354ea1/ffffff&text=ZH";
+    userAvatar.alt = "ZH";
+
+    // Create the user's prompt message
+    const userPromptMessage = document.createElement("div");
+    userPromptMessage.classList.add("flex", "min-h-[85px]", "rounded-b-xl", "rounded-tl-xl", "bg-slate-50", "p-4", "light:bg-slate-800", "sm:min-h-0", "sm:max-w-md", "md:max-w-2xl");
+    userPromptMessage.innerHTML = `<p>${input}</p>`;
+
+    // Append the user's avatar and prompt message to the prompt message container
+    promptMessageContainer.appendChild(userAvatar);
+    promptMessageContainer.appendChild(userPromptMessage);
+
+    // Append the prompt message container to the prompt messages container
+    const promptMessagesContainer = document.querySelector(".overflow-y-auto");
+    promptMessagesContainer.appendChild(promptMessageContainer);
+
+    // Scroll to the bottom of the prompt messages container
+    promptMessagesContainer.scrollTop = promptMessagesContainer.scrollHeight;
+
+    // Clear the input field
+    chatInput.value = "";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const chatInputForm = document.getElementById("chat-input-form");
+    chatInputForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const submittedText = chatInputForm.elements["chat-input"].value;
+      updatePromptMessages(submittedText);
+    });
+  });
+</script>
 
 </html>
