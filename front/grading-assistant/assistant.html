@@ -14,14 +14,15 @@
     }
   </script>
   <style>
-    .animate-bounce200 {
-      animation-delay: 0.2s;
+    @keyframes bounce {
+      0%, 100% { transform: translateY(-25%); }
+      50% { transform: translateY(0); }
     }
-
-    .animate-bounce400 {
-      animation-delay: 0.4s;
-    }
+    .animate-bounce { animation: bounce 1s infinite; }
+    .animate-bounce200 { animation: bounce 1s infinite; animation-delay: 0.2s; }
+    .animate-bounce400 { animation: bounce 1s infinite; animation-delay: 0.4s; }
   </style>
+  
 </head>
 
 <body>
@@ -240,7 +241,7 @@
   function showTypingIndicatorAndAddAiResponse() {
     const typingIndicator = document.getElementById("typing-indicator").cloneNode(true);
     typingIndicator.classList.remove("hidden");
-    // typingIndicator.classList.add("animate-pulse");
+    typingIndicator.classList.add("animate-pulse");
 
     const promptMessagesContainer = document.getElementById("prompt-messages-container");
     promptMessagesContainer.appendChild(typingIndicator);
