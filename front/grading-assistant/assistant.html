@@ -214,7 +214,7 @@
     // Create the user's prompt message
     const userPromptMessage = document.createElement("div");
     userPromptMessage.classList.add("flex", "min-h-[85px]", "rounded-b-xl", "rounded-tl-xl", "bg-slate-50", "p-4", "light:bg-slate-800", "sm:min-h-0", "sm:max-w-md", "md:max-w-2xl");
-    userPromptMessage.innerHTML = `<p>${input}</p>`;
+    userPromptMessage.textContent = input;
 
     // Append the user's avatar and prompt message to the prompt message container
     promptMessageContainer.appendChild(userAvatar);
