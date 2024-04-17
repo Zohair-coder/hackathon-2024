@@ -13,6 +13,7 @@
       document.querySelector('base').href = '/hackathon-2024/';
     }
   </script>
+
   <style>
     /* Tooltip container */
     .tooltip {
@@ -92,71 +93,132 @@
     </div>
   </nav>
 
-  <section class="mt-8 px-4 py-5 bg-white shadow-lg rounded-lg">
-    <h2 class="text-xl font-bold text-gray-800 mb-4">CS T480</h2>
-    <div>
-      <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
-      <table class="w-full text-sm text-left text-gray-500">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr>
-            <th scope="col" class="py-3 px-6">Component</th>
-            <th scope="col" class="py-3 px-6">Weightage</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white">
-          <tr class="bg-white border-b">
-            <td class="py-4 px-6">Assignment 1</td>
-            <td class="py-4 px-6">25%</td>
-          </tr>
-          <tr class="bg-white border-b">
-            <td class="py-4 px-6">Assignment 2</td>
-            <td class="py-4 px-6">25%</td>
-          </tr>
-          <tr class="bg-white border-b">
-            <td class="py-4 px-6">Assignment 3</td>
-            <td class="py-4 px-6">25%</td>
-          </tr>
-          <tr class="bg-white">
-            <td class="py-4 px-6">Assignment 4</td>
-            <td class="py-4 px-6">25%</td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="mt-8">
+
+    <!-- CS T480 -->
+    <div onclick="toggleCollapse('CST480-details')"
+      class="flex justify-between items-center px-4 py-2 bg-gray-100 cursor-pointer hover:bg-gray-200">
+      <h2 class="text-xl font-bold text-gray-800">CS T480</h2>
+      <svg class="w-6 h-6 text-gray-800 transform rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path
+          d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L224 277.091l154.706-154.707c9.373-9.373 24.569-9.373 33.941 0l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.373-24.569 9.373-33.942 0z" />
+      </svg>
     </div>
-    <div class="mt-6">
-      <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
-      <div class="grid grid-cols-7 gap-1 text-xs">
-        <!-- Weekdays Labels -->
-        <div class="text-center font-bold">Sun</div>
-        <div class="text-center font-bold">Mon</div>
-        <div class="text-center font-bold">Tue</div>
-        <div class="text-center font-bold">Wed</div>
-        <div class="text-center font-bold">Thu</div>
-        <div class="text-center font-bold">Fri</div>
-        <div class="text-center font-bold">Sat</div>
-        <!-- Days in Month -->
-        <!-- Adjust the start position by adding empty divs for the starting day of the week -->
-        <div></div> <!-- Empty if month starts on Monday -->
-        <div class="py-1 px-2 text-center border">1</div>
-        <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
-          <span class="tooltiptext">Reading</span>
-          2
+    <div id="CST480-details" style="display: none;" class="bg-white p-5">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">Grading Rubric</h3>
+        <table aria-label="grading rubric" class="w-full text-sm text-left text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th scope="col" class="py-3 px-6">Component</th>
+              <th scope="col" class="py-3 px-6">Weightage</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr class="bg-white border-b">
+              <td class="py-4 px-6">Assignment 1</td>
+              <td class="py-4 px-6">25%</td>
+            </tr>
+            <tr class="bg-white border-b">
+              <td class="py-4 px-6">Assignment 2</td>
+              <td class="py-4 px-6">25%</td>
+            </tr>
+            <tr class="bg-white border-b">
+              <td class="py-4 px-6">Assignment 3</td>
+              <td class="py-4 px-6">25%</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-4 px-6">Assignment 4</td>
+              <td class="py-4 px-6">25%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">Assignment Deadlines</h3>
+
+        <div class="flex items-center justify-center mb-12">
+          <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 mr-24">
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+              <path
+                d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160C3.125 272.4 0 264.2 0 256s3.125-16.38 9.375-22.62l160-160C179.6 67.13 187.8 64 192 64c8.188 0 16.38 3.125 22.62 9.375s9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62L75.31 256l139.7 139.7c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62C208.4 444.9 200.2 448 192 448z" />
+            </svg>
+          </button>
+          <h4 class="text-base font-medium text-gray-800">April 2024</h4>
+          <button class="px-3 py-1 bg-gray-200 text-gray-800 font-semibold rounded hover:bg-gray-300 ml-24">
+            <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+              <path
+                d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-6.25-6.25-9.375-14.44-9.375-22.62s3.125-16.38 9.375-22.62L180.7 256 41.38 116.3C35.13 110 32 101.8 32 93.62s3.125-16.38 9.375-22.62C47.63 64.13 55.82 64 64 64s16.38 3.125 22.62 9.375l160 160c6.25 6.25 9.375 14.44 9.375 22.62s-3.125 16.38-9.375 22.62l-160 160C80.38 444.9 72.19 448 64 448z" />
+            </svg>
+          </button>
         </div>
-        <div class="py-1 px-2 text-center border">3</div>
-        <div class="py-1 px-2 text-center border">4</div>
-        <div class="py-1 px-2 text-center border">5</div>
-        <div class="py-1 px-2 text-center border">6</div>
-        <div class="py-1 px-2 text-center border">7</div>
-        <div class="py-1 px-2 text-center border">8</div>
-        <div class="py-1 px-2 text-center border">9</div>
-        <div class="py-1 px-2 text-center border bg-red-500 text-white" title="Homework">10</div>
-        <!-- Continue filling in all days of the month -->
-        <!-- Add more days with 'bg-red-500 text-white' where assignments are due -->
+
+        <div class="grid grid-cols-7 gap-1 text-s">
+          <!-- Weekdays Labels -->
+          <div class="text-center font-bold">Sun</div>
+          <div class="text-center font-bold">Mon</div>
+          <div class="text-center font-bold">Tue</div>
+          <div class="text-center font-bold">Wed</div>
+          <div class="text-center font-bold">Thu</div>
+          <div class="text-center font-bold">Fri</div>
+          <div class="text-center font-bold">Sat</div>
+          <!-- Days in Month -->
+          <!-- Adjust the start position by adding empty divs for the starting day of the week -->
+          <div></div> <!-- Empty if month starts on Monday -->
+          <div class="py-1 px-2 text-center border">1</div>
+          <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white">
+            <span class="tooltiptext">Reading</span>
+            2
+          </div>
+          <div class="py-1 px-2 text-center border">3</div>
+          <div class="py-1 px-2 text-center border">4</div>
+          <div class="py-1 px-2 text-center border">5</div>
+          <div class="py-1 px-2 text-center border">6</div>
+          <div class="py-1 px-2 text-center border">7</div>
+          <div class="py-1 px-2 text-center border">8</div>
+          <div class="py-1 px-2 text-center border">9</div>
+          <div class="tooltip py-1 px-2 text-center border bg-red-500 text-white" title="Homework">
+            <span class="tooltiptext">Homework</span>
+            10
+          </div>
+          <div class="py-1 px-2 text-center border">11</div>
+          <div class="py-1 px-2 text-center border">12</div>
+          <div class="py-1 px-2 text-center border">13</div>
+          <div class="py-1 px-2 text-center border">14</div>
+          <div class="py-1 px-2 text-center border">15</div>
+          <div class="py-1 px-2 text-center border">16</div>
+          <div class="py-1 px-2 text-center border">17</div>
+          <div class="py-1 px-2 text-center border">18</div>
+          <div class="py-1 px-2 text-center border">19</div>
+          <div class="py-1 px-2 text-center border">20</div>
+          <div class="py-1 px-2 text-center border">21</div>
+          <div class="py-1 px-2 text-center border">22</div>
+          <div class="py-1 px-2 text-center border">23</div>
+          <div class="py-1 px-2 text-center border">24</div>
+          <div class="py-1 px-2 text-center border">25</div>
+          <div class="py-1 px-2 text-center border">26</div>
+          <div class="py-1 px-2 text-center border">27</div>
+          <div class="py-1 px-2 text-center border">28</div>
+          <div class="py-1 px-2 text-center border">29</div>
+          <div class="py-1 px-2 text-center border">30</div>
+        </div>
       </div>
     </div>
   </section>
 
 
 </body>
+
+<script>
+  function toggleCollapse(id) {
+    const content = document.getElementById(id);
+    if (content.style.display === 'none' || content.style.display === '') {
+      content.style.display = 'block';
+    } else {
+      content.style.display = 'none';
+    }
+  }
+</script>
+
 
 </html>
