@@ -245,6 +245,7 @@
 
     const promptMessagesContainer = document.getElementById("prompt-messages-container");
     promptMessagesContainer.appendChild(typingIndicator);
+    typingIndicator.scrollIntoView();
     
     setTimeout(() => { // Simulate a delay for typing
       typingIndicator.classList.add("hidden");
