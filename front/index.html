@@ -2,88 +2,88 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>College Assistant</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <title>College Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <link type="text/css" rel="stylesheet" href="main.css">
+    <link type="text/css" rel="stylesheet" href="main.css">
 
-  <base href="/">
-  <script>
-    // Check if the hostname includes 'github.io' which is used in GitHub Pages
-    if (window.location.hostname.includes('github.io')) {
-      document.querySelector('base').href = '/hackathon-2024/';
-    }
-  </script>
+    <base href="/">
+    <script>
+        // Check if the hostname includes 'github.io' which is used in GitHub Pages
+        if (window.location.hostname.includes('github.io')) {
+            document.querySelector('base').href = '/hackathon-2024/';
+        }
+    </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lugrasimo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
-  <style>
-    /* Add to your existing style tag */
+    <style>
+        /* Add to your existing style tag */
 
-    body {
-      background-color: #f0f0f0;
-    }
+        body {
+            background-color: #f0f0f0;
+        }
 
-    .hidden {
-      display: none;
-    }
+        .hidden {
+            display: none;
+        }
 
-    .heading {
-      color: white;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 24px;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+        .heading {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-    .button-container {
-      text-align: center;
-      margin-top: 20px;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
 
-    .nav-button {
-      background-color: #014670;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        .nav-button {
+            background-color: #014670;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .nav-button:hover {
-      background-color: #016699;
-    }
+        .nav-button:hover {
+            background-color: #016699;
+        }
 
-    .josefin-sans {
-      font-family: "Josefin Sans", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 400;
-      font-style: normal;
-    }
+        .josefin-sans {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
 
-    img.header-logo {
-      height: 50px;
-      vertical-align: left;
-    }
+        img.header-logo {
+            height: 50px;
+            vertical-align: left;
+        }
 
-    body {
-      overflow-y: hidden;
-      /* Show vertical scrollbar */
-    }
-  </style>
+        body {
+            overflow-y: hidden;
+            /* Show vertical scrollbar */
+        }
+    </style>
 </head>
 
 <body>
-  <script type="importmap">
+    <script type="importmap">
     {
       "imports": {
         "three": "./build/three.module.js",
@@ -92,234 +92,241 @@
     }
   </script>
 
-  <nav class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <!-- Brand name section -->
-        <a href="index.html" class="text-lg font-bold text-gray-800 flex justify-between items-center">
-          <img src="images/logo.png" alt="Logo" class="header-logo">
-          <div class="mt-1 ml-1">
-            <h1 class="josefin-sans">Learnify</h1>
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand name section -->
+                <a href="index.html" class="text-lg font-bold text-gray-800 flex justify-between items-center">
+                    <img src="images/logo.png" alt="Logo" class="header-logo">
+                    <div class="mt-1 ml-1">
+                        <h1 class="josefin-sans">Learnify</h1>
 
-          </div>
+                    </div>
 
-          <!-- Navigation Links -->
-          <div class="flex">
-            <a href="index.html"
-              class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-            <a href="grading-assistant.html"
-              class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">ReviewPro</a>
-            <a href="syllabus-summary.html"
-              class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Course Capsule</a>
-            <a href="calendar-sync.html"
-              class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Calendar Sync</a>
-            <a href="grade-calculator.html"
-              class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grade Forecaster</a>
-          </div>
+                    <!-- Navigation Links -->
+                    <div class="flex">
+                        <a href="index.html"
+                            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="grading-assistant.html"
+                            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">ReviewPro</a>
+                        <a href="syllabus-summary.html"
+                            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Course
+                            Capsule</a>
+                        <a href="calendar-sync.html"
+                            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Calendar
+                            Sync</a>
+                        <a href="grade-calculator.html"
+                            class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Grade
+                            Forecaster</a>
+                    </div>
 
-          <!-- User Info -->
-          <div class="flex items-center">
-            <svg class="h-6 w-6 text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-              <path
-                d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
-            </svg>
-            <span class="text-gray-800 text-sm font-medium">Zohair ul Hasan</span>
-          </div>
-      </div>
+                    <!-- User Info -->
+                    <div class="flex items-center">
+                        <svg class="h-6 w-6 text-gray-800 mr-2" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                            <path
+                                d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
+                        </svg>
+                        <span class="text-gray-800 text-sm font-medium">Zohair ul Hasan</span>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add this within the body tag, below existing content -->
+
+    <div id="dynamicContent" class="hidden flex min-h-screen items-center justify-center">
+        <div>
+            <h2 class="heading text-black text-center">Get Started!</h2>
+            <div class="button-container flex flex-col items-center">
+
+                <a href="grading-assistant.html" class="nav-button my-2 w-full inline-block">
+                    Review Pro
+                </a>
+
+                <a href="syllabus-summary.html" class="nav-button my-2 w-full inline-block">
+                    Course Capsule
+                </a>
+
+                <a href="calendar-sync.html" class="nav-button my-2 w-full inline-block">
+                    Calendar Sync
+                </a>
+
+                <a href="grade-calculator.html" class="nav-button my-2 w-full inline-block">
+                    Grade Forecaster
+                </a>
+
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Add this within the body tag, below existing content -->
+    <script type="module">
 
-  <div id="dynamicContent" class="hidden flex min-h-screen items-center justify-center">
-    <div>
-      <h2 class="heading text-black text-center">Get Started!</h2>
-      <div class="button-container flex flex-col items-center">
+        import * as THREE from 'three';
 
-        <button class="nav-button my-2 w-full"><a href="grading-assistant.html">ReviewPro</a></button>
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { FontLoader } from 'three/addons/loaders/FontLoader.js';
 
+        let camera, scene, renderer;
 
-        <button class="nav-button my-2 w-full"><a href="syllabus-summary.html">Course Capsule</a></button>
+        init();
 
+        function init() {
 
-        <button class="nav-button my-2 w-full"><a href="calendar-sync.html"></a>Calendar Sync</a></button>
+            camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+            camera.position.set(0, - 400, 600);
 
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf0f0f0);
 
+            const loader = new FontLoader();
+            loader.load('fonts/helvetiker_regular.typeface.json', function (font) {
 
-        <button class="nav-button my-2 w-full"><a href="grade-calculator.html"></a>Grade Forecaster</a></button>
+                const color = 0x006699;
 
-      </div>
-    </div>
-  </div>
+                const matDark = new THREE.LineBasicMaterial({
+                    color: color,
+                    side: THREE.DoubleSide
+                });
 
-  <script type="module">
+                const matLite = new THREE.MeshBasicMaterial({
+                    color: color,
+                    transparent: true,
+                    opacity: 0.4,
+                    side: THREE.DoubleSide
+                });
 
-    import * as THREE from 'three';
+                const message = 'Student Life\n Made Easier.';
 
-    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-    import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+                const shapes = font.generateShapes(message, 100);
 
-    let camera, scene, renderer;
+                const geometry = new THREE.ShapeGeometry(shapes);
 
-    init();
+                geometry.computeBoundingBox();
 
-    function init() {
+                const xMid = - 0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
 
-      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
-      camera.position.set(0, - 400, 600);
+                geometry.translate(xMid, 0, 0);
 
-      scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xf0f0f0);
+                // make shape ( N.B. edge view not visible )
 
-      const loader = new FontLoader();
-      loader.load('fonts/helvetiker_regular.typeface.json', function (font) {
+                const text = new THREE.Mesh(geometry, matLite);
+                text.position.z = - 75;
+                scene.add(text);
 
-        const color = 0x006699;
+                // make line shape ( N.B. edge view remains visible )
 
-        const matDark = new THREE.LineBasicMaterial({
-          color: color,
-          side: THREE.DoubleSide
-        });
+                const holeShapes = [];
 
-        const matLite = new THREE.MeshBasicMaterial({
-          color: color,
-          transparent: true,
-          opacity: 0.4,
-          side: THREE.DoubleSide
-        });
+                for (let i = 0; i < shapes.length; i++) {
 
-        const message = 'Student Life\n Made Easier.';
+                    const shape = shapes[i];
 
-        const shapes = font.generateShapes(message, 100);
+                    if (shape.holes && shape.holes.length > 0) {
 
-        const geometry = new THREE.ShapeGeometry(shapes);
+                        for (let j = 0; j < shape.holes.length; j++) {
 
-        geometry.computeBoundingBox();
+                            const hole = shape.holes[j];
+                            holeShapes.push(hole);
 
-        const xMid = - 0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
+                        }
 
-        geometry.translate(xMid, 0, 0);
+                    }
 
-        // make shape ( N.B. edge view not visible )
+                }
 
-        const text = new THREE.Mesh(geometry, matLite);
-        text.position.z = - 75;
-        scene.add(text);
+                shapes.push.apply(shapes, holeShapes);
 
-        // make line shape ( N.B. edge view remains visible )
+                const lineText = new THREE.Object3D();
 
-        const holeShapes = [];
+                for (let i = 0; i < shapes.length; i++) {
 
-        for (let i = 0; i < shapes.length; i++) {
+                    const shape = shapes[i];
 
-          const shape = shapes[i];
+                    const points = shape.getPoints();
+                    const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
-          if (shape.holes && shape.holes.length > 0) {
+                    geometry.translate(xMid, 0, 0);
 
-            for (let j = 0; j < shape.holes.length; j++) {
+                    const lineMesh = new THREE.Line(geometry, matDark);
+                    lineText.add(lineMesh);
 
-              const hole = shape.holes[j];
-              holeShapes.push(hole);
+                }
 
-            }
+                scene.add(lineText);
 
-          }
+                render();
+
+            }); //end load function
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            const controls = new OrbitControls(camera, renderer.domElement);
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            controls.zoomSpeed = -1
+
+            let accumulatedDelta = 0; // This will accumulate the delta values of the wheel event
+            const threshold = 1000; // Set a threshold for when to reveal the content
+            let textVisible = true; // Track visibility of the text
+
+            renderer.domElement.addEventListener('wheel', function (event) {
+                event.preventDefault();  // Prevent scrolling the page
+
+                accumulatedDelta += event.deltaY; // Add up the delta values
+
+                if (accumulatedDelta > threshold) {
+                    hideThreeJsText();
+                    const dynamicContent = document.getElementById('dynamicContent');
+                    if (dynamicContent.classList.contains('hidden')) {
+                        dynamicContent.classList.remove('hidden');
+                        setTimeout(() => {
+                            document.querySelector('.heading').style.opacity = 1;
+                            document.querySelector('.button-container').style.opacity = 1;
+                        }, 300); // Delay to start the animation after revealing the content
+                    }
+                }
+
+                // Hide the three.js text
+
+                const delta = event.deltaY;
+                const zoomFactor = 0.1;  // Control the sensitivity of the zoom
+                camera.position.z -= delta * zoomFactor;
+                render();
+            });
+
+            controls.addEventListener('change', render);
+
+            window.addEventListener('resize', onWindowResize);
+
+        } // end init
+
+        function hideThreeJsText() {
+            document.getElementsByTagName('canvas')[0].style.display = 'none';
+        }
+
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            render();
 
         }
 
-        shapes.push.apply(shapes, holeShapes);
+        function render() {
 
-        const lineText = new THREE.Object3D();
-
-        for (let i = 0; i < shapes.length; i++) {
-
-          const shape = shapes[i];
-
-          const points = shape.getPoints();
-          const geometry = new THREE.BufferGeometry().setFromPoints(points);
-
-          geometry.translate(xMid, 0, 0);
-
-          const lineMesh = new THREE.Line(geometry, matDark);
-          lineText.add(lineMesh);
+            renderer.render(scene, camera);
 
         }
 
-        scene.add(lineText);
-
-        render();
-
-      }); //end load function
-
-      renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      document.body.appendChild(renderer.domElement);
-
-      const controls = new OrbitControls(camera, renderer.domElement);
-      controls.target.set(0, 0, 0);
-      controls.update();
-
-      controls.zoomSpeed = -1
-
-      let accumulatedDelta = 0; // This will accumulate the delta values of the wheel event
-      const threshold = 1000; // Set a threshold for when to reveal the content
-      let textVisible = true; // Track visibility of the text
-
-      renderer.domElement.addEventListener('wheel', function (event) {
-        event.preventDefault();  // Prevent scrolling the page
-
-        accumulatedDelta += event.deltaY; // Add up the delta values
-
-        if (accumulatedDelta > threshold) {
-          hideThreeJsText();
-          const dynamicContent = document.getElementById('dynamicContent');
-          if (dynamicContent.classList.contains('hidden')) {
-            dynamicContent.classList.remove('hidden');
-            setTimeout(() => {
-              document.querySelector('.heading').style.opacity = 1;
-              document.querySelector('.button-container').style.opacity = 1;
-            }, 300); // Delay to start the animation after revealing the content
-          }
-        }
-
-        // Hide the three.js text
-
-        const delta = event.deltaY;
-        const zoomFactor = 0.1;  // Control the sensitivity of the zoom
-        camera.position.z -= delta * zoomFactor;
-        render();
-      });
-
-      controls.addEventListener('change', render);
-
-      window.addEventListener('resize', onWindowResize);
-
-    } // end init
-
-    function hideThreeJsText() {
-      document.getElementsByTagName('canvas')[0].style.display = 'none';
-    }
-
-    function onWindowResize() {
-
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-
-      render();
-
-    }
-
-    function render() {
-
-      renderer.render(scene, camera);
-
-    }
-
-  </script>
+    </script>
 
 </body>
 
